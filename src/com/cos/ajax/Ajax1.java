@@ -36,6 +36,18 @@ public class Ajax1 extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+
+		System.out.println("username : " + username);
+		System.out.println("password : " + password);
+		
+		String jsonData = "{\"username\" : \"ssar\", \"password\" : \"1234\"}";
+		
+		response.setContentType("application/json;charset=utf-8");
+		PrintWriter out = response.getWriter();
+		out.print(jsonData);
+		out.flush();
 	}
 
 }
